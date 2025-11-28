@@ -1,0 +1,12 @@
+services:
+  dbt:
+    build: .
+    working_dir: /app/jaffle_shop        # donde está dbt_project.yml
+    volumes:
+      - .:/app
+    environment:
+      - DBT_PROFILES_DIR=/app/jaffle_shop
+    ports:
+      - "4213:4213"                      # para dbt docs
+    stdin_open: true
+    tty: true

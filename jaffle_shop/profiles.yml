@@ -1,10 +1,8 @@
-jaffle_shop:
+jaffle_shop:          # debe coincidir con name: en dbt_project.yml
+  target: dev
   outputs:
     dev:
       type: duckdb
-      path: 'bbdd/jaffle_shop.duckdb'
+      path: bbdd/jaffle_shop.duckdb   # ruta vista desde jaffle_shop/
+      schema: main
       threads: 4
-  target: dev
-
-
-  
